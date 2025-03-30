@@ -6,6 +6,76 @@
 - The UI framework should use **Gluestack** and **NativeWindUI**.
 - The programming language for the application is **TypeScript**.
 
+## Project Structure Setup
+- Follow this recommended project structure:
+  ```
+  dive_timers/
+  ├── src/
+  │   ├── assets/            # Images, fonts, and other static assets
+  │   ├── components/        # Reusable UI components
+  │   │   ├── common/        # Shared/generic components
+  │   │   └── features/      # Feature-specific components
+  │   ├── constants/         # App-wide constants
+  │   ├── features/          # Feature-specific code
+  │   │   └── [feature]/
+  │   │       ├── components/
+  │   │       ├── screens/
+  │   │       ├── hooks/
+  │   │       └── types.ts
+  │   ├── hooks/             # Custom React hooks
+  │   ├── models/            # Data models/types
+  │   ├── navigation/        # Navigation configuration
+  │   ├── screens/           # Screen components
+  │   ├── services/          # API services, external integrations
+  │   ├── store/             # State management
+  │   ├── theme/             # UI theme definitions
+  │   ├── types/             # TypeScript type definitions
+  │   └── utils/             # Utility functions
+  ├── app.json              # Expo configuration
+  ├── App.tsx               # Root component
+  ├── babel.config.js       # Babel configuration
+  ├── package.json          # Dependencies and scripts
+  ├── tsconfig.json         # TypeScript configuration
+  └── README.md             # Project documentation
+  ```
+
+## Environment Setup
+- Required Development Tools:
+  - Node.js (v18 or newer)
+  - npm (v9 or newer) or Yarn (v1.22 or newer)
+  - Expo CLI
+  - VSCode with recommended extensions:
+    - ESLint
+    - Prettier
+    - React Native Tools
+    - TypeScript React code snippets
+
+- Environment Configuration:
+  - Use `.env` files for environment variables with `react-native-dotenv`
+  - Create separate environments:
+    - `.env.development` - Development environment variables
+    - `.env.staging` - Staging environment variables
+    - `.env.production` - Production environment variables
+  - Define environment variable types in a `env.d.ts` file
+
+- Dependencies Management:
+  - Required Core Dependencies:
+    - expo: "~49.0.0"
+    - react: "18.2.0"
+    - react-native: "0.72.x"
+    - @gluestack-ui/themed: "^0.1.x"
+    - nativewind: "^2.x.x"
+    - axios: "^1.x.x"
+    - react-navigation/native: "^6.x.x"
+
+- Development Workflow:
+  - Start the development server: `expo start` or `npm start`
+  - Run on iOS: `npm run ios`
+  - Run on Android: `npm run android`
+  - Run tests: `npm test`
+  - Lint code: `npm run lint`
+  - Format code: `npm run format`
+
 ## TypeScript Development Best Practices
 - When developing in TypeScript, adhere to the following guidelines:
 
